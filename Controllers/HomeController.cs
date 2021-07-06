@@ -20,12 +20,16 @@ namespace Bookish.Controllers
 
         public IActionResult Index()
         {
+            return View("Privacy");
+        }
+        public IActionResult Ismat()
+        {
             return View();
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
