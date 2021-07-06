@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFGetStarted
+namespace Bookish.DbModels
 {
     public class LibraryContext : DbContext
     {
@@ -14,37 +15,42 @@ namespace EFGetStarted
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=BookishDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\localhost:5000;Database=BookishDB;Trusted_Connection=True;");
         }
 
     }
-
+    
+    [Table("Books")]
     public class BookDbModel
     {
-        public int BookId { get; set; }
+        public int Id { get; }
         public string Title { get; set; }
-        public int YearPublished { get; set; }
+        public int? YearPublished { get; set; }
         public string Isbn { get; set; }
+        public List<BookCopyDbModel> Copies { get; set; } 
+        public List<AuthorDbModel> Authors { get; set; }
     }
 
     public class BookCopyDbModel
     {
-        public int BookCopyId { get; set; }
+        public int Id { get; }
         public int BookId { get; set; }
+        public BookDbModel Book { get; set; }
         public string Status { get; set; }
     }
 
     public class AuthorDbModel
     {
-        public int AuthorId { get; set; }
+        public int Id { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public List<BookDbModel> Books { get; set; }
 
     }
 
     public class MemberDbModel
     {
-        public int MemberId { get; set; }
+        public int Id { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -52,12 +58,14 @@ namespace EFGetStarted
 
     public class BorrowerHistoryDbModel
     {
-        public int BorrowerHistoryId { get; set; }
+        public int Id { get; }
         public int MemberId { get; set; }
+        public MemberDbModel Member { get; set; }
         public int BookCopyId { get; set; }
+        public BookCopyDbModel Copy { get; set; }
         public DateTime DateIssued { get; set; }
         public DateTime DateExpectedReturn { get; set; }
-        public DateTime DateReturned { get; set; }
+        public DateTime? DateReturned { get; set; }
 
     }
 
