@@ -9,11 +9,11 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
-    public class BooksController : Controller
+    public class HomeController : Controller
     {
         private readonly ILogger<BooksController> _logger;
 
-        public BooksController(ILogger<BooksController> logger)
+        public HomeController(ILogger<BooksController> logger)
         {
             _logger = logger;
         }

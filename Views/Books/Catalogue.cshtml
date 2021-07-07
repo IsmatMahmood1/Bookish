@@ -1,0 +1,29 @@
+@model CatalogueViewModel
+@{
+    ViewData["Title"] = "Books List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>YearPublished</th>
+        <th>Isbn</th>
+        <th>Number in Bookish</th>
+        <th>Available now</th>
+    </tr>
+    @foreach(var book in Model.Books) 
+    {
+        <tr>
+            <th>@book.Id</th>
+            <th>@book.Title</th>
+            <th>@book.Author</th>
+            <th>@book.YearPublished</th>
+            <th>@book.Isbn</th>
+            <th>10</th>
+            <th>5</th>
+        </tr>
+    }
+</table>

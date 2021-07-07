@@ -9,33 +9,29 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
+    [Route("/[controller]/{action=Catalogue}")]
     public class BooksController : Controller
     {
-        private readonly ILogger<BooksController> _logger;
 
-        public BooksController(ILogger<BooksController> logger)
+        public IActionResult Book()
         {
-            _logger = logger;
+            return View(new BookViewModel());
         }
+        
+        public IActionResult Catalogue()
+        {
+            var catalogue = new CatalogueViewModel
+            {
+                Books = new List<BookViewModel>
+                {
+                    new BookViewModel
+                    {
+                        Title = "Dune"
+                    }
+                }
+            };
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult Members()
-        {
-            return View();
-        }
-
-        public IActionResult Books()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(catalogue);
         }
     }
 }

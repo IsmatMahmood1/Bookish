@@ -5,6 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Mwmbwrs\**" />
+    <Content Remove="Views\Mwmbwrs\**" />
+    <EmbeddedResource Remove="Views\Mwmbwrs\**" />
+    <None Remove="Views\Mwmbwrs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\BooksViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Books\Book - Copy.cshtml" />
+    <Content Remove="Views\Books\BooksList.cshtml" />
+    <Content Remove="Views\Books\Cataligue.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

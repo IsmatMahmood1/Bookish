@@ -1,0 +1,17 @@
+@model BookViewModel
+@{
+    ViewData["Title"] = "Books List";
+}
+<h1>@ViewData["Title"]</h1>
+
+   <table>
+        <tr>
+            <th>@Model.Id</th>
+            <th>@Model.Title</th>
+            <th>@Model.Author</th>
+            <th>@Model.YearPublished</th>
+            <th>@Model.Isbn</th>
+            <th>10</th>
+            <th>5</th>
+        </tr>
+    </table>
