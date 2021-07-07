@@ -1,17 +1,23 @@
-using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Bookish.Models;
 
-// In SDK-style projects such as this one, several assembly attributes that were historically
-// defined in this file are now automatically added during build and populated with
-// values defined in project properties. For details of which attributes are included
-// and how to customise this process see: https://aka.ms/assembly-info-properties
+namespace Bookish.Controllers
+{
+    [Route("/[controller]/{action=Members}")]
+    public class MembersController : Controller
+    {
+
+        public IActionResult Members()
+        {
+            return View(new MembersListViewModel());
+        }
+    }
 
 
-// Setting ComVisible to false makes the types in this assembly not visible to COM
-// components.  If you need to access a type in this assembly from COM, set the ComVisible
-// attribute to true on that type.
-
-[assembly: ComVisible(false)]
-
-// The following GUID is for the ID of the typelib if this project is exposed to COM.
-
-[assembly: Guid("9d6c3ee3-a546-4ef7-bde8-4cbef91a9c62")]
+}

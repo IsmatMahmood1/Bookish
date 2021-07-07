@@ -1,17 +1,23 @@
-Import System.Runtime.InteropServices
+@model MembersListViewModel
+@{
+    ViewData["Title"] = "Members List";
+}
+<h1>@ViewData["Title"]</h1>
 
-' In SDK-style projects such as this one, several assembly attributes that were historically
-' defined in this file are now automatically added during build and populated with
-' values defined in project properties. For details of which attributes are included
-' and how to customise this process see: https://aka.ms/assembly-info-properties
-
-
-' Setting ComVisible to false makes the types in this assembly not visible to COM
-' components.  If you need to access a type in this assembly from COM, set the ComVisible
-' attribute to true on that type.
-
-<Assembly: ComVisible(False)> 
-
-' The following GUID is for the ID of the typelib if this project is exposed to COM.
-
-<Assembly: Guid("dfd3f72b-6107-4741-b591-40630586fa17")> 
+<table>
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>ActiveStatus</th>
+    </tr>
+    @foreach (var member in Model.Members)
+    {
+        <tr>
+            <th>@member.Id</th>
+            <th>@member.FirstName</th>
+            <th>@member.LastName</th>
+            <th>@member.ActiveStatus</th>
+        </tr>
+    }
+</table>

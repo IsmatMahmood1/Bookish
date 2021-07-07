@@ -1,14 +1,14 @@
-using System;
-
-namespace Bookish.Models
+namespace Bookish.DbModels
 {
-    public class MemberViewModel
+    public string[] CreateMember()
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
         public bool ActiveStatus { get; set; }
+        public List<BorrowerHistoryDbModel> BorrowerHistories { get; set; }
 
     }
+
+
 }
