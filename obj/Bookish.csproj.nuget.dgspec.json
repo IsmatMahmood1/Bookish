@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eleevd\\training\\bookishismat\\bookish\\Bookish.csproj": {}
+    "C:\\Users\\eleevd\\Training\\BookishIsmat\\Bookish\\Bookish.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eleevd\\training\\bookishismat\\bookish\\Bookish.csproj": {
+    "C:\\Users\\eleevd\\Training\\BookishIsmat\\Bookish\\Bookish.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eleevd\\training\\bookishismat\\bookish\\Bookish.csproj",
+        "projectUniqueName": "C:\\Users\\eleevd\\Training\\BookishIsmat\\Bookish\\Bookish.csproj",
         "projectName": "Bookish",
-        "projectPath": "C:\\Users\\eleevd\\training\\bookishismat\\bookish\\Bookish.csproj",
-        "packagesPath": "C:\\Users\\eleevdadmin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eleevd\\training\\bookishismat\\bookish\\obj\\",
+        "projectPath": "C:\\Users\\eleevd\\Training\\BookishIsmat\\Bookish\\Bookish.csproj",
+        "packagesPath": "C:\\Users\\eleevd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eleevd\\Training\\BookishIsmat\\Bookish\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eleevdadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eleevd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

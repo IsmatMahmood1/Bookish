@@ -15,7 +15,7 @@ namespace Bookish.DbModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\localhost:5000;Database=BookishDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=localhost,1433;Database=BookishDB;User Id=sa;Password=Password123;");
         }
 
     }
