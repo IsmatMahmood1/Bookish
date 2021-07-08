@@ -38,27 +38,15 @@ namespace Bookish.Services
             return authors;
         }
 
-        public BookViewModel GetBookView(int id)
+        public BookDbModel GetBookById(int id)
         {
-            var bookView = new BookViewModel();
+
             var book = _context.Books
                 .Include(book => book.Authors)
+                .Include(book => book.Copies)
                 .Single(b => b.Id == id);
-            var authorsString = "";
-            foreach (var a in book.Authors)
-            {
-                authorsString += $"{a.FirstName} {a.LastName}, ";
-            }
 
-            bookView.Id = id;
-            bookView.Title = book.Title;
-            //bookView.Author = "";
-            bookView.Author = authorsString;
-            bookView.YearPublished = book.YearPublished;
-            bookView.Isbn = book.Isbn;
-
-            return bookView;
-
-    }
+            return book;
+        }
     }
 }

@@ -26,12 +26,9 @@ namespace Bookish.Controllers
             var books = new List<BookViewModel>();
             foreach (var book in booksInDb)
             {
-                var newBook = service.GetBookView(book.Id);
-                //{
-                //    Title = book.Title
-
-                //};
-                books.Add(newBook);
+                var newBook = service.GetBookById(book.Id);
+                var newBookView = new BookViewModel(newBook);
+                books.Add(newBookView);
             }
             var catalogue = new CatalogueViewModel
             {

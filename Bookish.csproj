@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Queries\**" />
     <Compile Remove="Views\Mwmbwrs\**" />
+    <Content Remove="Queries\**" />
     <Content Remove="Views\Mwmbwrs\**" />
+    <EmbeddedResource Remove="Queries\**" />
     <EmbeddedResource Remove="Views\Mwmbwrs\**" />
+    <None Remove="Queries\**" />
     <None Remove="Views\Mwmbwrs\**" />
   </ItemGroup>
 
@@ -33,10 +37,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Queries\" />
   </ItemGroup>
 
 </Project>
