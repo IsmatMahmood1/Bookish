@@ -17,6 +17,23 @@ namespace Bookish.Controllers
         {
             return View(new MembersListViewModel());
         }
+
+        public IActionResult Member()
+        {
+            var member = new MembersListViewModel
+            {
+                Members = new List<MemberViewModel>
+                {
+                    new MemberViewModel
+                    {
+                        FirstName = "Fab",
+                        LastName = "Reader"
+                    }
+                }
+            };
+                           
+            return View(member);
+        }
     }
 
 
