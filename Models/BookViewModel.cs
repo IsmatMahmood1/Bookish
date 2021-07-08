@@ -1,5 +1,6 @@
 using Bookish.DbModels;
 using System;
+using System.Linq;
 
 namespace Bookish.Models
 {
@@ -19,19 +20,10 @@ namespace Bookish.Models
         
         public BookViewModel(BookDbModel book)
         {
-            var authorsString = "";
-            foreach (var a in book.Authors)
-            {
-               authorsString += $"{a.FirstName} {a.LastName}, ";
-            }
-            var copiesAvailable = 0;
-            foreach (var copy in book.Copies)
-            {
-                if (copy.Status == "Available")
-                {
-                    copiesAvailable++;
-                }
-            }
+            var authorsString = String.Concat(book.Authors.Select(o => o.FirstName + " " + o.LastName));
+        
+            var copiesAvailable = book.Copies.Where(copy => copy.Status == "Available").Count();
+        
             Id = book.Id;
             Title = book.Title;
             Author = authorsString;

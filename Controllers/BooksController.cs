@@ -10,31 +10,34 @@ using Bookish.Services;
 
 namespace Bookish.Controllers
 {
+
+
     [Route("/[controller]/{action=Catalogue}")]
     public class BooksController : Controller
     {
 
+        private readonly IBookService _bookService;
+        
+        public BooksController (IBookService bookService)
+        {
+            _bookService = bookService;
+        }
+
         public IActionResult Book()
         {
+            var model = new BookViewModel();
             return View(new BookViewModel());
         }
         
         public IActionResult Catalogue()
         {
-            var service = new BookService();
-            var booksInDb = service.GetBooks();
-            var books = new List<BookViewModel>();
-            foreach (var book in booksInDb)
-            {
-                var newBook = service.GetBookById(book.Id);
-                var newBookView = new BookViewModel(newBook);
-                books.Add(newBookView);
-            }
+     
+            var booksInDb = _bookService.GetBooks();
+            var books = booksInDb.Select(book => new BookViewModel(book)).ToList();
             var catalogue = new CatalogueViewModel
             {
                 Books = books
-                
-        };
+            };
             return View(catalogue);
         }
     }

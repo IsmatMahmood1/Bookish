@@ -11,6 +11,8 @@ namespace Bookish.Services
     {
         List<BookDbModel> GetBooks();
         List<AuthorDbModel> GetAuthors();
+        BookDbModel GetBookById(int id);
+
         //List<BookCopyDbModel> GetCopies();
         //List<BorrowerHistoryDbModel> GetBorrowerHistory();
     }
@@ -26,7 +28,10 @@ namespace Bookish.Services
 
         public List<BookDbModel> GetBooks()
         {
-            var books = _context.Books.ToList();
+            var books = _context.Books
+                .Include(book => book.Authors)
+                .Include(book => book.Copies)
+                .ToList();
 
             return books;
         }
