@@ -1,0 +1,14 @@
+@model MemberViewModel
+@{
+    ViewData["Title"] = "Member";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    <tr>
+        <th>@Model.Id</th>
+        <th>@Model.FirstName</th>
+        <th>@Model.LastName</th>
+        <th>@Model.ActiveStatus</th>
+    </tr>
+</table>

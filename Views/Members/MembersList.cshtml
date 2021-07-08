@@ -1,0 +1,23 @@
+@model MembersListViewModel
+@{
+    ViewData["Title"] = "Members List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>ActiveStatus</th>
+    </tr>
+    @foreach (var member in Model.Members)
+    {
+        <tr>
+            <th>@member.Id</th>
+            <th>@member.FirstName</th>
+            <th>@member.LastName</th>
+            <th>@member.ActiveStatus</th>
+        </tr>
+    }
+</table>
