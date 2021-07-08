@@ -42,12 +42,18 @@ namespace Bookish.Services
         {
             var bookView = new BookViewModel();
             var book = _context.Books
+                .Include(book => book.Authors)
                 .Single(b => b.Id == id);
+            var authorsString = "";
+            foreach (var a in book.Authors)
+            {
+                authorsString += $"{a.FirstName} {a.LastName}, ";
+            }
 
             bookView.Id = id;
             bookView.Title = book.Title;
-            bookView.Author = "";
-            //bookView.Author = book.Authors.ForEach(a
+            //bookView.Author = "";
+            bookView.Author = authorsString;
             bookView.YearPublished = book.YearPublished;
             bookView.Isbn = book.Isbn;
 
