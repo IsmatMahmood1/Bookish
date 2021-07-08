@@ -1,6 +1,6 @@
 @model MemberViewModel
 @{
-    ViewData["Title"] = "Member";
+    ViewData["Title"] = "Members Page";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -9,6 +9,6 @@
         <th>@Model.Id</th>
         <th>@Model.FirstName</th>
         <th>@Model.LastName</th>
-        <th>@Model.ActiveStatus</th>
+          @*<th>@Model.ActiveStatus</th>*@ 
     </tr>
 </table>

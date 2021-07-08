@@ -1,3 +1,4 @@
+using Bookish.DbModels;
 using System;
 
 namespace Bookish.Models
@@ -8,7 +9,17 @@ namespace Bookish.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         
-        public bool ActiveStatus { get; set; }
+        //public bool ActiveStatus { get; set; }
+
+        public MemberViewModel() { }
+
+        public MemberViewModel(MemberDbModel member)
+        {
+            Id = member.Id;
+            FirstName = member.FirstName;
+            LastName = member.LastName;
+            //ActiveStatus = member.ActiveStatus;
+        }
 
     }
 }
