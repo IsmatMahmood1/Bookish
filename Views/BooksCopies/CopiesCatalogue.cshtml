@@ -1,0 +1,21 @@
+@model CopiesCatalogueViewModel
+@{
+    ViewData["Title"] = "Copies List";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    @foreach(var copy in Model.Copies) 
+    {
+        <tr>
+            <th>@copy.Id</th>
+            <th>@copy.Title</th>
+            <th>@copy.Status</th>
+        </tr>
+    }
+</table>

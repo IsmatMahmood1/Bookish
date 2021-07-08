@@ -116,8 +116,6 @@ C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Bookish.TagHelper
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Bookish.TagHelpers.output.cache
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Bookish.RazorCoreGenerate.cache
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Ismat.cshtml.g.cs
-C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -188,3 +186,8 @@ C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Home\Books.
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Home\Members.cshtml.g.cs
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Books\Book.cshtml.g.cs
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Books\Catalogue.cshtml.g.cs
+C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Books\Book.cshtml.g.cs
+C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Books\Catalogue.cshtml.g.cs
+C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Books.cshtml.g.cs
+C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Members.cshtml.g.cs
+C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\BooksCopies\CopiesCatalogue.cshtml.g.cs
