@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bookish.Models;
+using Bookish.Services;
 
 namespace Bookish.Controllers
 {
@@ -20,17 +21,23 @@ namespace Bookish.Controllers
         
         public IActionResult Catalogue()
         {
+            var service = new BookService();
+            var booksInDb = service.GetBooks();
+            var books = new List<BookViewModel>();
+            foreach (var book in booksInDb)
+            {
+                var newBook = service.GetBookView(book.Id);
+                //{
+                //    Title = book.Title
+
+                //};
+                books.Add(newBook);
+            }
             var catalogue = new CatalogueViewModel
             {
-                Books = new List<BookViewModel>
-                {
-                    new BookViewModel
-                    {
-                        Title = "Dune"
-                    }
-                }
-            };
-
+                Books = books
+                
+        };
             return View(catalogue);
         }
     }

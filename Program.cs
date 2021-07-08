@@ -14,7 +14,6 @@ namespace Bookish
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            //Queries.BookQuery.Query();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
