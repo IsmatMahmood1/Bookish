@@ -1,6 +1,6 @@
 @model BookViewModel
 @{
-    ViewData["Title"] = "Books List";
+    ViewData["Title"] = $"Books {@Model.Id} ";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -11,7 +11,7 @@
             <th>@Model.Author</th>
             <th>@Model.YearPublished</th>
             <th>@Model.Isbn</th>
-            <th>10</th>
-            <th>5</th>
+            <th>@Model.CopiesInBookish</th>
+            <th>@Model.CopiesAvailable</th>
         </tr>
     </table>

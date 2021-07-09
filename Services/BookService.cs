@@ -73,8 +73,6 @@ namespace Bookish.Services
                 Authors = new List<AuthorDbModel>{author}
             };
             _context.Books.Add(newBook);
-            //_context.SaveChanges();
-            //_context.Authors.Add(author);
             _context.SaveChanges();
         }
     }

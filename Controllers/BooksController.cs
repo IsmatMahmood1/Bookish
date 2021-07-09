@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bookish.Models;
 using Bookish.Services;
+using Bookish.DbModels;
 
 namespace Bookish.Controllers
 {
@@ -23,11 +24,11 @@ namespace Bookish.Controllers
             _bookService = bookService;
         }
 
-        [HttpGet]
-        public IActionResult Book()
+        [HttpGet("/[controller]/{id}")]
+        public IActionResult Book(int id)
         {
-            var model = new BookViewModel();
-            return View(new BookViewModel());
+            var book = _bookService.GetBookById(id);
+            return View(new BookViewModel(book));
         }
         
         [HttpGet]
@@ -43,7 +44,28 @@ namespace Bookish.Controllers
             return View(catalogue);
         }
 
-       
+        public IActionResult Copy()
+        {
+            return View(new BookCopyViewModel());
+        }
+
+        public IActionResult CopiesCatalogue()
+        {
+            _ = new CopiesCatalogueViewModel
+            {
+                Copies = new List<BookCopyViewModel>
+                {
+                    new BookCopyViewModel
+                    {
+                        Title = "Dune",
+                        Status = "Available"
+                    }
+                }
+            };
+            return View(new BookViewModel(_bookService.GetBookById(1)));
+        }
+
+
         [HttpGet]
         public IActionResult AddBook()
         {
