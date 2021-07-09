@@ -57,10 +57,12 @@ namespace Bookish.Services
 
         public void AddBook(AddBookViewModel addBookViewModel)
         {
-            var author = _context.Authors.SingleOrDefault(author => author.FirstName == addBookViewModel.AuthorFirstName && author.LastName == addBookViewModel.AuthorLastName)
+            var author = _context.Authors.SingleOrDefault(author => author.FirstName == addBookViewModel.AuthorFirstName
+            && author.LastName == addBookViewModel.AuthorLastName)
                 ?? new AuthorDbModel()
                 {
-                   _context.Authors.Add()
+                    FirstName = addBookViewModel.AuthorFirstName,
+                    LastName = addBookViewModel.AuthorLastName
                 };
 
             var newBook = new BookDbModel()
@@ -71,8 +73,9 @@ namespace Bookish.Services
                 Authors = new List<AuthorDbModel>{author}
             };
             _context.Books.Add(newBook);
+            //_context.SaveChanges();
+            //_context.Authors.Add(author);
             _context.SaveChanges();
-            
         }
     }
 }
