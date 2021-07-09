@@ -28,7 +28,7 @@ namespace Bookish.Services
             return members;
         }
 
-        public MemberDbModel GetMemberById(string firstname)
+        public MemberDbModel GetMemberByName(string firstname)
         {
 
             var member = _context.Members
