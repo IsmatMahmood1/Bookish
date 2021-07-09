@@ -1,11 +1,15 @@
-﻿namespace Bookish.DbModels
+﻿using static Bookish.DbModels.BookStatusEnum;
+
+namespace Bookish.DbModels
 {
-    public class BookCopyDbModel
+    public partial class BookCopyDbModel
     {
+        
         public int Id { get; set; }
         public int BookId { get; set; }
         public BookDbModel Book { get; set; }
-        public string Status { get; set; }
+        public BookStatus Status { get; set; }
+
     }
 
 

@@ -8,8 +8,8 @@ namespace Bookish.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
-        //public bool ActiveStatus { get; set; }
+
+        public string ActiveStatus { get; set; }
 
         public MemberViewModel() { }
 
@@ -18,7 +18,7 @@ namespace Bookish.Models
             Id = member.Id;
             FirstName = member.FirstName;
             LastName = member.LastName;
-            //ActiveStatus = member.ActiveStatus;
+            ActiveStatus = (member.ActiveStatus)?"Active":"Archived";
         }
 
     }

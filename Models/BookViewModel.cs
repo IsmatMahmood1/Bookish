@@ -22,7 +22,7 @@ namespace Bookish.Models
         {
             var authorsString = String.Concat(book.Authors.Select(o => o.FirstName + " " + o.LastName));
         
-            var copiesAvailable = book.Copies.Where(copy => copy.Status == "Available").Count();
+            var copiesAvailable = book.Copies.Where(copy => copy.Status == 0).Count();
         
             Id = book.Id;
             Title = book.Title;
