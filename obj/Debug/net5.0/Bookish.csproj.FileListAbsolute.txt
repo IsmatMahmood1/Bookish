@@ -196,3 +196,4 @@ C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Membe
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\BooksCopies\CopiesCatalogue.cshtml.g.cs
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Members\Member.cshtml.g.cs
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Members\Members.cshtml.g.cs
+C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Books\AddBook.cshtml.g.cs

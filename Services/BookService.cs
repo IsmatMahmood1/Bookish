@@ -13,6 +13,7 @@ namespace Bookish.Services
         List<AuthorDbModel> GetAuthors();
         BookDbModel GetBookById(int id);
 
+        void AddBook(AddBookViewModel addBookViewModel);
         //List<BookCopyDbModel> GetCopies();
         //List<BorrowerHistoryDbModel> GetBorrowerHistory();
     }
@@ -52,6 +53,26 @@ namespace Bookish.Services
                 .Single(b => b.Id == id);
 
             return book;
+        }
+
+        public void AddBook(AddBookViewModel addBookViewModel)
+        {
+            var author = _context.Authors.SingleOrDefault(author => author.FirstName == addBookViewModel.AuthorFirstName && author.LastName == addBookViewModel.AuthorLastName)
+                ?? new AuthorDbModel()
+                {
+                   _context.Authors.Add()
+                };
+
+            var newBook = new BookDbModel()
+            {
+                Title = addBookViewModel.Title,
+                YearPublished = addBookViewModel.YearPublished,
+                Isbn = addBookViewModel.Isbn,
+                Authors = new List<AuthorDbModel>{author}
+            };
+            _context.Books.Add(newBook);
+            _context.SaveChanges();
+            
         }
     }
 }

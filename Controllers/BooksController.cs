@@ -23,12 +23,14 @@ namespace Bookish.Controllers
             _bookService = bookService;
         }
 
+        [HttpGet]
         public IActionResult Book()
         {
             var model = new BookViewModel();
             return View(new BookViewModel());
         }
         
+        [HttpGet]
         public IActionResult Catalogue()
         {
      
@@ -39,6 +41,21 @@ namespace Bookish.Controllers
                 Books = books
             };
             return View(catalogue);
+        }
+
+       
+        [HttpGet]
+        public IActionResult AddBook()
+        {
+            return View();
+        }
+       
+        [HttpPost]
+        public IActionResult AddBook(AddBookViewModel addBookViewModel)
+        {
+            _bookService.AddBook(addBookViewModel);
+            return RedirectToAction("Catalogue");
+            
         }
     }
 }
