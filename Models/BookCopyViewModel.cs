@@ -1,3 +1,4 @@
+using Bookish.DbModels;
 using System;
 
 namespace Bookish.Models
@@ -5,7 +6,16 @@ namespace Bookish.Models
     public class BookCopyViewModel
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Status { get; set; }
+        public BookViewModel Book { get; set; }
+        public BookCopyStatusEnum.BookCopyStatus Status { get; set; }
+        
+        
+        public BookCopyViewModel(BookCopyDbModel bookCopy)
+        {
+
+            Id = bookCopy.Id;
+            Book = new BookViewModel(bookCopy.Book);
+            Status = bookCopy.Status;
+        }
     }
 }
