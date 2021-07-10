@@ -44,26 +44,16 @@ namespace Bookish.Controllers
             return View(catalogue);
         }
 
-        public IActionResult Copy()
-        {
-            return View(new BookCopyViewModel());
-        }
+        //public IActionResult Copy()
+        //{
+        //    return View(new BookCopyViewModel(BookCopyDbModel bookCopy);
+        //}
 
-        public IActionResult CopiesCatalogue()
-        {
-            _ = new CopiesCatalogueViewModel
-            {
-                Copies = new List<BookCopyViewModel>
-                {
-                    new BookCopyViewModel
-                    {
-                        Title = "Dune",
-                        Status = "Available"
-                    }
-                }
-            };
-            return View(new BookViewModel(_bookService.GetBookById(1)));
-        }
+        //public IActionResult CopiesCatalogue()
+        //{
+        
+        //    return View(new BookViewModel(_bookService.GetBookById(1)));
+        //}
 
 
         [HttpGet]

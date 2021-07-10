@@ -188,8 +188,6 @@ C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Books\Book.
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\Books\Catalogue.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Books\Book.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Books\Catalogue.cshtml.g.cs
-C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Books.cshtml.g.cs
-C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Home\Members.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\BooksCopies\CopiesCatalogue.cshtml.g.cs
 C:\Users\eleevd\Training\BookishIsmat\Bookish\obj\Debug\net5.0\Razor\Views\Members\Member.cshtml.g.cs
 C:\Users\ismmah\Training\CSharp\Bookish\obj\Debug\net5.0\Razor\Views\BooksCopies\CopiesCatalogue.cshtml.g.cs

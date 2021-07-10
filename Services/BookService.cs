@@ -65,14 +65,22 @@ namespace Bookish.Services
                     LastName = addBookViewModel.AuthorLastName
                 };
 
+            var copies = new List<BookCopyDbModel>();
+            for (var i = 0; i < addBookViewModel.NumberOfCopies; i++)
+            {
+                copies.Add (new BookCopyDbModel());
+            };
+
             var newBook = new BookDbModel()
             {
                 Title = addBookViewModel.Title,
                 YearPublished = addBookViewModel.YearPublished,
                 Isbn = addBookViewModel.Isbn,
-                Authors = new List<AuthorDbModel>{author}
+                Authors = new List<AuthorDbModel>{author},
+                Copies = copies
             };
             _context.Books.Add(newBook);
+            
             _context.SaveChanges();
         }
     }

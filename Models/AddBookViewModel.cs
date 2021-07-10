@@ -19,5 +19,8 @@ namespace Bookish.Models
         [Required]
         [Display(Name = "AuthorLastName")]
         public string AuthorLastName { get; set; }
+        [Required]
+        [Display(Name ="NumberOfCopies")]
+        public int NumberOfCopies { get; set; }
     }
 }
