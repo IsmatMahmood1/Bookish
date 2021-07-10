@@ -19,6 +19,8 @@ namespace Bookish.Controllers
         {
             _memberService = memberService;
         }
+
+        [HttpGet]
         public IActionResult Members()
         {
             var membersInDb = _memberService.GetMembers();
@@ -30,11 +32,24 @@ namespace Bookish.Controllers
             return View(membersList);
         }
 
-        public IActionResult Member()
+        [HttpGet("/[controller]/{id}")]
+        public IActionResult Member(int id)
         {
-            var model = new MemberViewModel();
-              
-            return View(model);
+            var model = _memberService.GetMemberById(id);    
+            return View(new MemberViewModel(model));
+        }
+
+        [HttpGet]
+        public IActionResult AddMember()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMember(AddMemberViewModel addMemberViewModel)
+        {
+            _memberService.AddMember(addMemberViewModel);
+            return RedirectToAction("Members");
         }
     }
 

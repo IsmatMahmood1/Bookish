@@ -1,14 +1,29 @@
 @model MemberViewModel
 @{
-    ViewData["Title"] = "Members Page";
+ViewData["Title"] = $"Member {@Model.Id}";
 }
 <h1>@ViewData["Title"]</h1>
 
 <table>
     <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>ActiveStatus</th>
+    </tr>
+    <tr>
         <th>@Model.Id</th>
         <th>@Model.FirstName</th>
         <th>@Model.LastName</th>
-        <th>@Model.ActiveStatus</th> 
+        <th>@Model.ActiveStatus</th>
     </tr>
 </table>
+
+@*<h2>Add new Member</h2>
+<form asp-controller="Members" asp-action="AddMember" method="post">
+    <label asp-for="FirstName">First Name: </label> <input type="text" asp-for="FirstName" />
+    <label asp-for="LastName">Last Name: </label> <input type="text" asp-for="LastName" />
+    <label asp-for="ActiveStatus">ISBN: </label> <input type="text" asp-for="ActiveStatus" />
+   
+    <button type="submit">Create new member</button>
+</form>*@
