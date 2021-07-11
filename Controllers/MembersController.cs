@@ -51,6 +51,14 @@ namespace Bookish.Controllers
             _memberService.AddMember(addMemberViewModel);
             return RedirectToAction("Members");
         }
+        [HttpPost]
+        public IActionResult UpdateMemberById(MemberViewModel memberViewModel)
+        {
+            _memberService.UpdateMemberById(memberViewModel);
+            return RedirectToAction("Members");
+        }
+
+
     }
 
 

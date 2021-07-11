@@ -19,11 +19,12 @@ ViewData["Title"] = $"Member {@Model.Id}";
     </tr>
 </table>
 
-@*<h2>Add new Member</h2>
-<form asp-controller="Members" asp-action="AddMember" method="post">
+<h2>Update Member Record</h2>
+<form asp-controller="Members" asp-action="UpdateMemberById" method="post">
     <label asp-for="FirstName">First Name: </label> <input type="text" asp-for="FirstName" />
     <label asp-for="LastName">Last Name: </label> <input type="text" asp-for="LastName" />
-    <label asp-for="ActiveStatus">ISBN: </label> <input type="text" asp-for="ActiveStatus" />
+    <label asp-for="ActiveStatus">Active Status: </label> <input type="checkbox" asp-for="ActiveStatus" />
+    <input asp-for="Id" value="@Model.Id" alt="Id" type="hidden"/>
    
-    <button type="submit">Create new member</button>
-</form>*@
+    <button type="submit">Update Record</button>
+</form>

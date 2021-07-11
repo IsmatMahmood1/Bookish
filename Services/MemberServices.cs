@@ -12,6 +12,7 @@ namespace Bookish.Services
         List<MemberDbModel> GetMembers();
         MemberDbModel GetMemberById(int id);
         void AddMember(AddMemberViewModel addMemberViewModel);
+        void UpdateMemberById(MemberViewModel memberViewModel);
     }
 
     public class MemberService : IMemberService
@@ -50,5 +51,20 @@ namespace Bookish.Services
             _context.SaveChanges();
         
         }
+        public void UpdateMemberById(MemberViewModel memberViewModel)
+        {
+
+            var member = _context.Members.Single(m => m.Id == memberViewModel.Id);
+
+              member.FirstName = memberViewModel.FirstName;
+              member.LastName = memberViewModel.LastName;
+              member.ActiveStatus = memberViewModel.ActiveStatus;
+          
+            _context.SaveChanges();
+        }
+
+
+
+
     }
 }
