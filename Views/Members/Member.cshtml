@@ -28,3 +28,8 @@ ViewData["Title"] = $"Member {@Model.Id}";
    
     <button type="submit">Update Record</button>
 </form>
+
+<form asp-controller="Members" asp-action="DeleteMemberById" method="post">
+    <input asp-for="Id" value="@Model.Id" alt="Id" type="hidden" />
+    <button type="submit">Delete Record</button>
+</form>

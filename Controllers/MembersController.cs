@@ -58,6 +58,13 @@ namespace Bookish.Controllers
             return RedirectToAction("Members");
         }
 
+        [HttpPost]
+        public IActionResult DeleteMemberById(int id)
+        {
+            _memberService.DeleteMemberById(id);
+            return RedirectToAction("Members");
+        }
+
 
     }
 
